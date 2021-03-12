@@ -1,0 +1,33 @@
+@import "variables"
+@import "button"
+@import "_mixins"
+
+%tamanho-padrao
+   font-size: 45px
+
+body
+   margin: 10px
+
+.p-especial
+   @include special
+
+h2
+   @include special
+   @include green
+   @extend %tamanho-padrao
+
+.esp-menor
+   @include espacamento(10px , 10px, red, black)
+
+.esp-medio
+   @include espacamento(15px, 15px, blue, green)
+
+.esp-maior
+   @include espacamento($p: 25px , $m: 25px , $bc: purple, $bghover: red)
+
+.app-padrao
+   @include custom-border($style: solid, $color: blue)
+
+.app-padrao2
+   @include custom-border($style: dotted , $color: #4509f4 , $width: 3px)
+   background: #4509f4
