@@ -64,4 +64,21 @@ h2
 
 .teste-3
    width: custom-width($division: 5)
-   background-color: blue
+   background-color: calcular(5, 5)
+
+$fonts: 40px, 60px, 100px
+
+@each $font in $fonts
+   .title-#{$font}
+      font-size: $font
+      line-height: $font * .2
+
+@for $i from 1 through 3
+   .p-#{$i}
+      @if $i == 1
+         color: lightblue
+      @else if $i == 2
+         color: lightgreen
+      @else if $i == 3
+         color: teal
+         background-color: #09f
