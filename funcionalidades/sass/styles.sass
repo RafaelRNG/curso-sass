@@ -1,6 +1,11 @@
+@chatset "UTF-8"
 @import "variables"
 @import "button"
 @import "_mixins"
+@import "plugins"
+@import "functions"
+
+$medida: 4
 
 %tamanho-padrao
    font-size: 45px
@@ -18,16 +23,45 @@ h2
 
 .esp-menor
    @include espacamento(10px , 10px, red, black)
+   @include colors()
+   @extend %font-pattern
 
 .esp-medio
    @include espacamento(15px, 15px, blue, green)
+   @include colors($background: #321)
 
 .esp-maior
    @include espacamento($p: 25px , $m: 25px , $bc: purple, $bghover: red)
+   @include colors($background: #321, $font: #ddd)
 
 .app-padrao
    @include custom-border($style: solid, $color: blue)
+   background-color: rgba(#000, 0.75)
 
 .app-padrao2
    @include custom-border($style: dotted , $color: #4509f4 , $width: 3px)
    background: #4509f4
+
+.container-menor
+   width: 100px * 2
+   border: cutsom-border-function()
+
+.container-maior
+   border: cutsom-border-function(23)
+   width: 25rem * $medida
+
+.font-pequena
+   font-size: 50px
+   color: text-color(10)
+
+.teste-1
+   width: custom-width()
+   background-color: red
+
+.teste-2
+   width: custom-width($width: 1000px)
+   background-color: green
+
+.teste-3
+   width: custom-width($division: 5)
+   background-color: blue
